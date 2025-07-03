@@ -20,6 +20,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.renderscript.Element
 import android.renderscript.RenderScript
+import androidx.core.graphics.createBitmap
 import com.google.android.renderscript.Range2d
 import com.google.android.renderscript.Rgba3dArray
 import com.google.android.renderscript.YuvFormat
@@ -480,7 +481,7 @@ fun vectorSizeOfBitmap(bitmap: Bitmap): Int {
 }
 
 fun duplicateBitmap(original: Bitmap): Bitmap {
-    val copy = Bitmap.createBitmap(original.width, original.height, original.config)
+    val copy = createBitmap(width = original.width, height = original.height, config = original.config ?: error("Bitmap config is null."))
     val canvas = Canvas(copy)
     canvas.drawBitmap(original, 0f, 0f, null)
     return copy
