@@ -519,7 +519,11 @@ void * selectKernel(Key_t key)
 
 bool ColorMatrixTask::build(Key_t key) {
 #if defined(ARCH_ARM_USE_INTRINSICS) && !defined(ARCH_ARM64_USE_INTRINSICS)
-    mBufSize = 4096;
+    long pageSize = sysconf(_SC_PAGESIZE);
+    if (pageSize < 0) {
+        pageSize = 4096;
+    }
+    mBufSize = pageSize;
     //StopWatch build_time("rs cm: build time");
     mBuf = (uint8_t *)mmap(0, mBufSize, PROT_READ | PROT_WRITE,
                                   MAP_PRIVATE | MAP_ANON, -1, 0);
