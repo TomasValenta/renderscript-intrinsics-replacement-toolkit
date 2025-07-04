@@ -1,5 +1,5 @@
 > Note: This clone was created solely to add support for a [16 KB page sizes](https://developer.android.com/guide/practices/page-sizes) to an already archived repository.
-It can be added via Jitpack: https://jitpack.io/#TomasValenta/renderscript-intrinsics-replacement-toolkit
+It can be added via: [![](https://jitpack.io/v/TomasValenta/renderscript-intrinsics-replacement-toolkit.svg)](https://jitpack.io/#TomasValenta/renderscript-intrinsics-replacement-toolkit)
 
 # RenderScript Intrinsics Replacement Toolkit - v0.8 BETA
 
